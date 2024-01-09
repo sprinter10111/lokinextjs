@@ -1,0 +1,20 @@
+query GetBlogPosts{
+  blogposts {
+    data {
+      attributes {        
+        Title
+        Content  
+        createdAt 
+        author {
+                  data {
+                    attributes {
+                      firstname
+                      lastname
+                      email                      
+                    }
+                  }
+                }     
+      }
+    }
+  }
+}

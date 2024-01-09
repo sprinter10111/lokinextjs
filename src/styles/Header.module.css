@@ -1,0 +1,19 @@
+.header {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .nav {
+    display: flex;
+  }
+  
+  .link {
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  
