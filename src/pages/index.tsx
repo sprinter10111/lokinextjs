@@ -65,6 +65,10 @@ const contentItems = laatsteblogpost?.Content?.map((item:any, index:any) => (
         <p>{ laatsteblogpost?.author?.data?.attributes?.firstname + "  " +laatsteblogpost?.author?.data?.attributes?.lastname}</p>
         
     </div>
+
+    <div> 
+      <h2>Zie hier de synopsis van elke aflevering van seizoen 1.</h2>
+    </div>
     </>
   )
 }
