@@ -95,7 +95,7 @@ episode.attributes?.picture?.data?.attributes?.url
         {episode?.attributes?.picture && (
           <img
           className={styles.episodeImage}
-            src={`http://192.168.1.30:1337${episode.attributes?.picture?.data?.attributes?.url}`}
+            src={`${episode.attributes?.picture?.data?.attributes?.url}`}
             alt="Episode Picture"
           />
         )}

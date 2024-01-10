@@ -8,10 +8,6 @@ import Synopsiscard from '../components/synopsiscard';
 import styles from '../styles/Index.module.css';
 
 import { GetStaticProps } from "next";
-
-
-
-
 const apolloClient = createApolloClient();
 
 

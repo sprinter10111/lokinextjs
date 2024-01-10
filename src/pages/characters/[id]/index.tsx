@@ -91,7 +91,7 @@ export const getStaticProps : GetStaticProps<PostsProps, Paths> = async (context
       {character?.attributes?.characterPicture && (
         <img 
         className={styles.characterImage}
-        src={"http://192.168.1.30:1337"+ character.attributes?.characterPicture?.data?.attributes?.url} 
+        src={character.attributes?.characterPicture?.data?.attributes?.url} 
         alt="Character Picture" />
       )}
     </div>

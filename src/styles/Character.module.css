@@ -12,4 +12,17 @@
   margin-top: 10px; /* Adjust the margin as needed */
 }
 
-/* Additional styles can be added as needed */
+/* Add this to your styles.css or styles.module.css file */
+
+.characterContainer {
+  margin-left: 20px; /* Adjust the margin as needed */
+  margin-bottom: 20px; /* Add margin-bottom for space between characters */
+}
+
+.characterContainer h1 {
+  font-size: 24px; /* Adjust the font size of character names */
+  margin-bottom: 10px; /* Add margin-bottom to create space between name and details */
+}
+
+
+
