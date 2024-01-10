@@ -15,10 +15,10 @@ const Header: React.FC = () => {
         <Link href="/">
           <p className={`${styles.link} ${isActive('/')}`}>Home</p>
         </Link>
-        <Link href="/blogpost">
-          <p className={`${styles.link} ${isActive('/blogpost')}`}>Blog Post</p>
+        <Link href="/blogposts">
+          <p className={`${styles.link} ${isActive('/blogposts')}`}>Blog Post</p>
         </Link>
-        <Link href="/charakters">
+        <Link href="/characters">
           <p className={`${styles.link} ${isActive('/characters')}`}>Characters</p>
         </Link>
         <Link href="/episodes">

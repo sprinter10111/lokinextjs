@@ -1,73 +1,103 @@
 
+import { ApolloClient, InMemoryCache,gql, useQuery } from '@apollo/client';
+import createApolloClient from '../../appolo-client';
+import { Blogpost,BlogpostEntity ,Episode,EpisodeEntity} from '../gql/graphql';
+import ReactMarkdown from "react-markdown";
+import { convertContentToString } from '../utils/contentUtils';
+import Synopsiscard from '../components/synopsiscard';
+import styles from '../styles/Index.module.css';
 
-import { useEffect } from "react";
-import { gql, useQuery } from '@apollo/client';
-import { Blogpost,BlogpostEntity } from '../gql/graphql';
+import { GetStaticProps } from "next";
 
 
 
-export default function Home() { 
- const { loading, error, data} = useQuery(gql`
-  query {
-    blogposts {
-      data {
-        attributes {        
-          Title
-          Content  
-          createdAt 
-          author {
-                    data {
-                      attributes {
-                        firstname
-                        lastname
-                        email                      
-                      }
-                    }
-                  }     
+
+const apolloClient = createApolloClient();
+
+
+interface PostsProps {
+  blogpostEntity: any;
+  episodes:any[];
+
+}
+
+export const getStaticProps : GetStaticProps<PostsProps> = async () => {
+  const { data } = await apolloClient.query({
+    query: gql`
+      query {
+        blogposts {
+          data {
+            attributes {
+              Title
+              Content
+              createdAt
+              author {
+                data {
+                  attributes {
+                    firstname
+                    lastname
+                    email
+                  }
+                }
+              }
+            }
+          }
+        }
+        episodes {
+          data {
+            attributes {
+              Title
+              synopsis
+            }
+          }
         }
       }
-    }
-  }
-  `);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+    `,
+  });
   
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
 
 const blogposts:BlogpostEntity[] =data.blogposts.data;
-console.log("data  "+data)
-console.log("daaaaa")
-console.log(blogposts);
+const blogpostEntity=blogposts[blogposts?.length-1];
 
-const laatsteblogpost=blogposts[blogposts?.length-1]?.attributes;
-console.log("cccc"+laatsteblogpost);
+const episodes:EpisodeEntity[]=data.episodes.data;
+  
+  return {
+      props: {
+        blogpostEntity: blogpostEntity,
+        episodes:episodes      
+      },
+  };
+};
 
-const contentItems = laatsteblogpost?.Content?.map((item:any, index:any) => (
-  <p key={index}>{item.text}</p>
-));
-
+export default function Home({blogpostEntity,episodes}:{blogpostEntity: BlogpostEntity, episodes:EpisodeEntity[]}) { 
+ 
+const laatsteblogpost=blogpostEntity.attributes;
 
     return (
-    <>    
-    <p> fgff</p>
-    <p>iets</p>
-      <p>laatste blog post</p>
-      <div><h1>{laatsteblogpost?.Title}</h1>
-      <div>{contentItems}</div>
+    <>   
+    <div className={styles.container}>
+      <h2>laatste blog post</h2>
+      <div className={styles.blogPostContainer}>
+      <div className={styles.titleContainer}>
+        <h1>{laatsteblogpost?.Title}</h1>
       </div>
+        <ReactMarkdown>{convertContentToString(laatsteblogpost?.Content)}</ReactMarkdown>
+        </div>
       <div>
-        <h2>gemaakt door</h2>
-        <p>{ laatsteblogpost?.author?.data?.attributes?.firstname + "  " +laatsteblogpost?.author?.data?.attributes?.lastname}</p>
+      <div className={styles.authorContainer}>
+        <div>
+      <h4>Gemaakt door</h4>
+      <p className={styles.authorText}>
+          {laatsteblogpost?.author?.data?.attributes?.firstname + "  " + laatsteblogpost?.author?.data?.attributes?.lastname}
+        </p>
+      </div>      
         
+      </div>
     </div>
-
-    <div> 
-      <h2>Zie hier de synopsis van elke aflevering van seizoen 1.</h2>
+    <div className={styles.synopsiscardContainer}> 
+      <Synopsiscard  episodes={episodes} />  
+    </div>
+      
     </div>
     </>
   )

@@ -1,0 +1,26 @@
+/* YourComponent.module.css */
+
+.container {
+    margin-bottom: 20px; /* Adjust the bottom margin as needed */
+  }
+  
+  .sectionTitle {
+    margin-bottom: 10px; /* Adjust the bottom margin as needed */
+  }
+  
+  .episodeContainer {
+    margin-bottom: 20px; /* Adjust the bottom margin as needed */
+  }
+  
+  .episodeTitle {
+    margin-top: 10px; /* Adjust the top margin as needed */
+    margin-bottom: 5px; /* Adjust the bottom margin as needed */
+  }
+  
+  .episodeSynopsis {
+    margin-top: 5px; /* Adjust the top margin as needed */
+    margin-bottom: 15px; /* Adjust the bottom margin as needed */
+  }
+  
+  /* Additional styling can be added as needed */
+  

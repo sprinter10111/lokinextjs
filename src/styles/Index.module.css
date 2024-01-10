@@ -1,0 +1,33 @@
+/* YourComponent.module.css */
+
+.container {
+    margin-left: 20px; /* Adjust the left margin as needed */
+  }
+  
+  .blogPostContainer {
+    border: 1px solid #ccc; /* Add a border to the blog post container */
+    padding: 10px; /* Add some padding for better visual separation */
+    margin-top: 20px; /* Adjust the top margin as needed */
+  }
+  
+  .synopsiscardContainer {
+    border: 1px solid #ccc; /* Add a border to the Synopsiscard container */
+    padding: 10px; /* Add some padding for better visual separation */
+    margin-top: 20px; /* Adjust the top margin as needed */
+  }
+
+  .authorContainer {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+  }
+  
+  .authorText {
+    margin-left: 10px; /* Add some space between the <h2> and <p> elements */
+  }
+  
+  .titleContainer {
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Adjust the bottom margin as needed */
+  }
+  /* Additional styling can be added as needed */
+  

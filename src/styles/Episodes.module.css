@@ -1,0 +1,20 @@
+
+
+.episodeContainer {
+  margin-left: 20px; /* Adjust the left margin as needed */
+  margin-top: 20px; /* Adjust the top margin as needed */
+  /* Add other styling as needed */
+}
+
+.episodeTitle {
+  /* Styling for episode title */
+}
+
+.episodeSynopsis {
+  /* Styling for episode synopsis */
+}
+
+.moreInfoLink {
+  margin-top: 10px; /* Adjust the margin as needed */
+  /* Styling for the "More info" link */
+}

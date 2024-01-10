@@ -1,0 +1,21 @@
+/* Episode.module.css */
+
+.episodeContainer {
+    margin-left: 20px; /* Adjust the left margin as needed */
+  }
+  
+  .episodeTitle {
+    /* Styling for episode title */
+  }
+  
+  .episodeSynopsis {
+    /* Styling for episode synopsis */
+  }
+  
+  .episodeImage {
+    width: 400px; /* Fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Adjust the top margin as needed */
+    /* Additional styling for the image */
+  }
+  

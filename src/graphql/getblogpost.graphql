@@ -1,4 +1,4 @@
-query GetBlogPosts{
+query {
   blogposts {
     data {
       attributes {        
@@ -16,5 +16,35 @@ query GetBlogPosts{
                 }     
       }
     }
+  }
+  episodes{
+      data{
+          attributes{
+              Title
+              synopsis
+              picture{
+                  data{
+                      attributes{
+                          url
+                      }
+                  }
+              }
+          }
+      }
+  }
+  characters{
+      data{
+          attributes{
+              name
+              characterDetail
+              characterPicture{
+                  data{
+                      attributes{
+                          url
+                      }
+                  }
+              }
+          }
+      }
   }
 }

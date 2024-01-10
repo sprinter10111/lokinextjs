@@ -1,0 +1,27 @@
+/* YourComponent.module.css */
+
+.blogPostContainer {
+    margin-left: 20px; /* Adjust the margin as needed */
+    border: 1px solid #ccc; /* Border color and width can be adjusted */
+    padding: 10px; /* Padding inside the container */
+    margin-bottom: 20px; /* Margin between blog posts */
+  }
+  
+  .contentContainer {
+    /* Styles for the content container inside the blog post */
+    /* You can add more styles as needed */
+  }
+  
+  .authorContainer {
+    /* Styles for the author container */
+    margin-top: 10px; /* Adjust the margin between content and author information */
+    margin-left: 20px; /* Same left margin as blogPostContainer */
+  }
+  
+  .dateContainer {
+    /* Styles for the date container */
+    margin-top: 10px; /* Adjust the margin between author information and date */
+  }
+  
+  /* Additional styles can be added as needed */
+  
